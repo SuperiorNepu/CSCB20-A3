@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="/static/login.css">
+    </head>
+    <body>
+        <div class = "container">
+            <form method="POST" action="/login.html">
+                <form class = "start" id = "log">
+                <h1 class = "name">Login</h1>
+                <div class = "messageerror"></div>
+                <div class = "grouping">
+                    <input type = "text" name="username" class = "input" autofocus placeholder = "Username">
+                    <div class = "general"></div>
+                </div>
+                <div class = "grouping">
+                    <input type = "password" name = "password" class = "input" autofocus placeholder = "Password">
+                    <div class = "general"></div>
+                </div>
+                <button class = "button" type = "submit" name = "login-but" value ="login">Login Now</button>
+                <p class = "forgot">
+                    <a href = "#" class = "redirect">Forgot your Password?</a> <!-- Password page -->
+               </p>
+                <p class = "forgot">
+                    <a class = "redirect" href = "./signup.html" id = "linkaccountcreation">No Account? Create one here</a>
+                </p>
+                </form>
+            </form>
+           
+
+             <!-- <form method="POST" action="/login.html">
+                    <input type="text" id="username" name="username" placeholder="Username"><br>
+                    <input type="text" id="password" name="password" placeholder="Password"><br>
+                    <button class="form-button" type="submit" name="signin" value="signin">Sign In</button>
+                    <button class="form-button" type="button" name="signup" value="signup" onclick="location.href='signup.html'">Sign Up</button>
+            </form> -->
+
+        </div>
+    </body>
+</html>

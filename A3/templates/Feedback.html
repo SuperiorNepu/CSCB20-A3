@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Feedback</title>
+        
+        <link rel="stylesheet" href="static/General.css">
+        <link rel="stylesheet" href="static/Feedback.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="navbar_item"> <a href="index.html" class = "navbar_link">HOME</a></div>
+            <div class="navbar_item"> <a href="Teaching_Team.html" class = "navbar_link">TEACHING TEAM</a></div>
+            <div class="navbar_item"> <a href="Tut_Office_Hours.html" class = "navbar_link">TUTORIALS/OFFICE HOURS</a></div>
+            <div class="navbar_item"> <a href="Syllabus.html" class = "navbar_link">SYLLABUS</a></div>
+            <div class="navbar_item"> <a href="Course_Work.html" class = "navbar_link">COURSE WORK</a></div>
+            <div class="navbar_item"> <a href="https://markus.utsc.utoronto.ca/cscb20w22/assignments" target="_blank" class = "navbar_link">MARKUS</a></div>
+            <div class="navbar_item"> <a href="https://piazza.com/class/kxj5alixpjg4ft" target="_blank" class = "navbar_link">PIAZZA</a></div>
+            <div class="navbar_item"> <a href="Additional_Resources.html" class = "navbar_link">ADDITIONAL RESOURCES</a></div>
+            <div class="navbar_item"> <a href="Grade.html" class = "navbar_link">GRADE</a></div>
+            <div class="navbar_item"> <a href="Feedback.html" class = "navbar_link">FEEDBACK</a></div>
+            <div class="navbar_item"> <a href="login.html" class = "navbar_link">LOGOUT</a></div>
+        </div>
+
+        <div class="page_content">
+            
+                {% if isadmin %}
+                <table>
+                    <tr>
+                        <th>Teaching Review</th>
+                        <th>Improvements</th>
+                        <th>Lab feedback</th>
+                        <th>Recommendations</th>
+                    </tr>
+                    {% for feedback in feedbacks %}
+                    <tr>
+                        <td>{{ feedback['teaching'] }}</td>
+                        <td>{{ feedback['improve_teaching'] }}</td>
+                        <td>{{ feedback['labs'] }}</td>
+                        <td>{{ feedback['improve_labs'] }}</td>
+    
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                <div class="custom">  
+                <div class="feedback-card">
+                    <h2>Send us Feedback</h2>
+                    <hr>
+                    <p>
+                    Now is your opportunity to evaluate your courses and instructors. 
+                    We appreciate you taking the time to provide comments to your instructor, 
+                    as they can use this feedback to reflect upon their own work in these challenging times.
+                    </p>
+                    
+                    <div class="form-container"></div>
+                        <form action="/Feedback.html" method="post">
+                            {% for name in instructor %}
+                                <input type="radio" name="role" value= "{{name['username']}}">
+                                <label for="{{name['username']}}">{{name["username"]}}</label>
+                                <br>
+                                
+                            {% endfor %}
+
+                            <label for="teaching">What do you like about the instructor teaching? </label>
+                            <textarea id=teaching name="teaching"></textarea><br>
+                            <label for="improve_teaching">What do you recommend the instructor to do to improve their teaching? </label>
+                            <textarea id=improve_teaching name="improve_teaching"></textarea><br>
+                            <label for="labs">What do you like about the labs? </label>
+                            <textarea id=labs name="labs"></textarea><br>
+                            <label for="improve_labs">What do you recommend the lab instructors to do to improve their lab teaching? </label>
+                            <textarea id=improve_labs name="improve_labs"></textarea><br>
+                            <input type="submit" class="form-button" name="feedback" value="Submit Feedback">
+
+                        </form>
+        
+                </div>
+                {% endif %}
+                <!-- For when instructors come -->
+
+
+
+            </div>
+        </div>
+        <footer> 
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Utoronto_coa.svg/250px-Utoronto_coa.svg.png" alt="UT Logo" class="footer_image"> <div class="blurb">
+                <p class="footer_item"> Website made by Jiaqi Sun, William Zhang, Michelle Zhu</p> 
+                <a href="https://www.utsc.utoronto.ca/cms/" class="footer_item">Visit The CMS website</a> 
+            </div>
+            <div class="v-line"></div>
+            <div class="footer_nav">
+                <div class="fnav"> <a href="index.html" class = "navbar_link">HOME</a></div>
+                <div class="fnav"> <a href="Teaching_Team.html" class = "navbar_link">TEACHING TEAM</a></div>
+                <div class="fnav"> <a href="Tut_Office_Hours.html" class = "navbar_link">TUTORIALS/OFFICE HOURS</a></div>
+                <div class="fnav"> <a href="Syllabus.html" class = "navbar_link">SYLLABUS</a></div>
+                <div class="fnav"> <a href="Course_Work.html" class = "navbar_link">COURSE WORK</a></div>
+                <div class="fnav"> <a href="https://markus.utsc.utoronto.ca/cscb20w22/assignments" target="_blank" class = "navbar_link">MARKUS</a></div>
+                <div class="fnav"> <a href="https://piazza.com/class/kxj5alixpjg4ft" target="_blank" class = "navbar_link">PIAZZA</a></div>
+                <div class="fnav"> <a href="Additional_Resources.html" class = "navbar_link">ADDITIONAL RESOURCES</a></div>
+                <div class="fnav"> <a href="Grade.html" class = "navbar_link">GRADE</a></div>
+                <div class="fnav"> <a href="Feedback.html" class = "navbar_link">FEEDBACK</a></div>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+
+.custom{
+    max-width: 1100px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 33px;
+    font-style: italic;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+h2 {
+    font-size: 28px;
+    font-style: italic;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.content-card{
+    border: 3px solid black;
+    flex-direction: row;
+    border-radius: 25px;
+    padding: 20px;
+    overflow: auto;
+    background-color: rgb(56, 112, 58);
+
+}
+
+.content-img{
+    float:left;
+    display:block;
+}
+
+
+.content-card-text{
+    margin-left: 350px;
+    font-size: 18px;
+}
+
+.content-card-body{
+    margin-left: 320px;
+    font-size: 18px;
+    list-style-type: none;
+    line-height: 1.5em
+}

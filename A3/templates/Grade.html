@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Feedback</title>
+        
+        <link rel="stylesheet" href="static/General.css">
+        <link rel="stylesheet" href="static/Grade.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="navbar_item"> <a href="index.html" class = "navbar_link">HOME</a></div>
+            <div class="navbar_item"> <a href="Teaching_Team.html" class = "navbar_link">TEACHING TEAM</a></div>
+            <div class="navbar_item"> <a href="Tut_Office_Hours.html" class = "navbar_link">TUTORIALS/OFFICE HOURS</a></div>
+            <div class="navbar_item"> <a href="Syllabus.html" class = "navbar_link">SYLLABUS</a></div>
+            <div class="navbar_item"> <a href="Course_Work.html" class = "navbar_link">COURSE WORK</a></div>
+            <div class="navbar_item"> <a href="https://markus.utsc.utoronto.ca/cscb20w22/assignments" target="_blank" class = "navbar_link">MARKUS</a></div>
+            <div class="navbar_item"> <a href="https://piazza.com/class/kxj5alixpjg4ft" target="_blank" class = "navbar_link">PIAZZA</a></div>
+            <div class="navbar_item"> <a href="Additional_Resources.html" class = "navbar_link">ADDITIONAL RESOURCES</a></div>
+            <div class="navbar_item"> <a href="Grade.html" class = "navbar_link">GRADE</a></div>
+            <div class="navbar_item"> <a href="Feedback.html" class = "navbar_link">FEEDBACK</a></div>
+            <div class="navbar_item"> <a href="login.html" class = "navbar_link">LOGOUT</a></div>
+        </div>
+        <div class="page_content">
+        {% if isadmin %}
+            <div class="Welcome"> Welcome, see your students grades</div>
+            <table class="my_table">
+                <tr>
+                    <th>Student Name</th>
+                    <th>Assignments</th>
+                    <th>Marks</th>
+                    <th>Remark Request</th>
+                </tr>
+                {% for item in grade %}
+                <tr>
+                <form method = "POST">
+                    <td> <input type="hidden" id = "student" name = "student" value = "{{ item['username'] }}">{{ item['username'] }}</td>
+                    <td> <input type="hidden" id =  "ass_id" name = "ass_id" value = "{{ item['assignment_id'] }}">{{ item['assignment_id'] }}</td>
+                    <td><form style="padding-top:0; padding-left:-30px; margin-left:0px;" method="POST">
+                        <input type="text" name="mark" placeholder= "{{ item['Mark'] }}">
+                        <input type="submit" name="remark" value="new mark" />
+                    </form> 
+                    </td>
+                    <td>{{ item['reason'][0] }}</td>
+                </form>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+        <div class="Welcome"> Welcome, see your current grades</div>
+        <br>
+
+            <table class="my_table">
+                <tr>
+                    <th>Student Name</th>
+                    <th>Assignments</th>
+                    <th>Marks</th>
+                    <th>Remark Request</th>
+                </tr>
+                {% for item in grade %}
+                <tr>
+                    <td>{{ item['username'] }}</td>
+                    <td>{{ item['assignment_id'] }}</td>
+                    <td>{{ item['Mark'] }}</td>
+                    <td>
+                        <button onclick = "location.href = './Remark.html';" > Remark Request </button> 
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            
+        <br>
+        {% endif %}
+        <form action = "/grade">
+            <input id="input_box" size="35" type="text" name="Assignment" placeholder="Enter an assignment to search for">
+            <input type="submit" name="search_button" value="Search">
+        </form>        
+
+
+        <br>
+        <br>
+        </div>
+        <footer> 
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Utoronto_coa.svg/250px-Utoronto_coa.svg.png" alt="UT Logo" class="footer_image"> <div class="blurb">
+                <p class="footer_item"> Website made by Jiaqi Sun, William Zhang, Michelle Zhu</p> 
+                <a href="https://www.utsc.utoronto.ca/cms/" class="footer_item">Visit The CMS website</a> 
+            </div>
+            <div class="v-line"></div>
+            <div class="footer_nav">
+                <div class="fnav"> <a href="index.html" class = "navbar_link">HOME</a></div>
+                <div class="fnav"> <a href="Teaching_Team.html" class = "navbar_link">TEACHING TEAM</a></div>
+                <div class="fnav"> <a href="Tut_Office_Hours.html" class = "navbar_link">TUTORIALS/OFFICE HOURS</a></div>
+                <div class="fnav"> <a href="Syllabus.html" class = "navbar_link">SYLLABUS</a></div>
+                <div class="fnav"> <a href="Course_Work.html" class = "navbar_link">COURSE WORK</a></div>
+                <div class="fnav"> <a href="https://markus.utsc.utoronto.ca/cscb20w22/assignments" target="_blank" class = "navbar_link">MARKUS</a></div>
+                <div class="fnav"> <a href="https://piazza.com/class/kxj5alixpjg4ft" target="_blank" class = "navbar_link">PIAZZA</a></div>
+                <div class="fnav"> <a href="Additional_Resources.html" class = "navbar_link">ADDITIONAL RESOURCES</a></div>
+                <div class="fnav"> <a href="Feedback.html" class = "navbar_link">FEEDBACK</a></div>
+            </div>
+        </footer>   
+    </body> 
+</html>
+
+
+
+      

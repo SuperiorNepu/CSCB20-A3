@@ -1,0 +1,157 @@
+.syll {
+    margin: auto;
+    margin: 0 15%;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+h1 {
+    font-size: 33px;
+    margin: 2% 25%;
+    font-style: italic;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+.explanation {
+    font-size: 15px;
+    margin: 0 25%;
+    font-style: bold;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+.column {
+    flex: 1 0 10%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+/* Colour changes on hover */
+.row2:hover, .row3:hover, .row4:hover, .row5:hover, .row6:hover, .row7:hover, .row8:hover, .row9:hover, .row10:hover, .row11:hover, .row12:hover, .row13:hover, .row14:hover {
+    background-color: rgb(255, 78, 78);
+}
+.pdflink:link {
+    color: rgb(151, 151, 255);
+}
+.pdflink:visited {
+    color: green;
+}
+.pdflink:hover, .pdflink:active {
+    color: rgb(76, 141, 163);
+}
+
+/* Makes the columns into rows */
+.row1 {
+    display: flex;
+    flex-wrap: row;
+    flex-direction: row;
+    width:100%;
+    border: 1px solid #000;
+    padding: 0 2%;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+    background-color: rgb(6, 41, 43);
+    margin: 0% 15%;
+    
+}
+.row2, .row4, .row6, .row8, .row10, .row12, .row14 {
+    display: flex;
+    flex-wrap: row;
+    flex-direction: row;
+    width: 100%;
+    border: 1px solid #000;
+    padding: 1% 7%;
+    background-color: rgb(29, 85, 88);
+    margin: 0% 15%;
+}
+.row3, .row5, .row7, .row9, .row11, .row13 {
+    display: flex;
+    flex-wrap: row;
+    flex-direction: row;
+    width: 100%;
+    border: 1px solid #000;
+    background-color: rgb(48, 127, 131);
+    padding: 1% 7%;
+    margin: 0% 15%;
+}
+
+@media (max-width : 600px) {
+    .syll {
+        margin: auto;
+        margin: 0 5%;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    h1 {
+        font-size: 33px;
+        margin: 10% 10%;
+        font-style: italic;
+        text-align: left;
+        color: rgb(255, 255, 255);
+    }
+    .explanation {
+        font-size: 15px;
+        margin: 0 10%;
+        font-style: bold;
+        text-align: left;
+        color: rgb(255, 255, 255);
+    }
+    .column {
+        flex: 1 0 10%;
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        flex: 1;
+    }
+    
+    /* Colour changes on hover */
+    .row2:hover, .row3:hover, .row4:hover, .row5:hover, .row6:hover, .row7:hover, .row8:hover, .row9:hover, .row10:hover, .row11:hover, .row12:hover, .row13:hover, .row14:hover {
+        background-color: rgb(255, 78, 78);
+    }
+    .pdflink:link {
+        color: rgb(151, 151, 255);
+    }
+    .pdflink:visited {
+        color: green;
+    }
+    .pdflink:hover, .pdflink:active {
+        color: rgb(76, 141, 163);
+    }
+    
+    /* Makes the columns into rows */
+    .row1 {
+        display: flex;
+        flex-wrap: row;
+        flex-direction: row;
+        width: 100%;
+        border: 1px solid #000;
+        padding: 0 2%;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 20px;
+        background-color: rgb(6, 41, 43);
+        
+    }
+    .row2, .row4, .row6, .row8, .row10, .row12, .row14 {
+        display: flex;
+        flex-wrap: row;
+        flex-direction: row;
+        width: 100%;
+        border: 1px solid #000;
+        padding: 3% 7%;
+        background-color: rgb(29, 85, 88);
+    }
+    .row3, .row5, .row7, .row9, .row11, .row13 {
+        display: flex;
+        flex-wrap: row;
+        flex-direction: row;
+        width: 100%;
+        border: 1px solid #000;
+        background-color: rgb(48, 127, 131);
+        padding: 3% 7%;
+    }
+    
+}

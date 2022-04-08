@@ -1,0 +1,79 @@
+/* --------------------------------------------------------- 
+home page css*/
+.home_page{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0% 15%;
+}
+.home_title{
+    align-content: center;
+    flex: 100%;
+    font-size: 4.5vw;
+    margin: 0%;
+}
+.course_description{
+    flex: 100%;
+    text-align: center;
+    color: rgb(206, 206, 206); 
+    margin: 0%;
+}
+.contained_text{
+    flex: 100%;
+    color: rgb(199, 199, 199);
+
+}
+.divide{
+    border-bottom: 2px solid rgb(133, 133, 133);
+    flex: 100%;
+    margin-bottom: 10px;
+}
+.calender{
+    flex:2;
+    border:solid 1px #777;
+    /* width: 600px;
+    height: 600px;    */
+}
+.v-line{
+    flex: 0.01;
+    border-left: white solid 3px;
+    margin: 0% 2%;
+}
+.announcements{
+    flex: 1;
+    margin-top: 0%;
+}
+.scroll_box{
+    overflow: auto;
+    width: auto;
+    height: 600px;
+}
+.a-title{
+    font-size: 3vw;
+    margin: 0%;
+}
+.a-sub{
+    font-size: 1.5vw;
+    margin-bottom: 3%;
+}
+/* --------------------------------------------------------- 
+Additional_Resources CSS*/
+
+
+/* @media media-type and (media-feature-rule) */
+/* 
+@media screen and (max-width = 600px) {
+ body {
+        color: red;
+     }
+}
+    
+@media (hover: hover){
+    body{
+        color: red;
+    }
+} */
+
+
+

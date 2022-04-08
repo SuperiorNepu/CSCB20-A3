@@ -1,0 +1,142 @@
+/* body styles */
+body{
+    height: 100%;
+    position: relative;
+    background-color: rgb(13, 13, 32);
+    font-family:sans-serif;
+    margin: 0%;
+    color: #ffffff;
+}
+.page_content{
+    min-height: 100vh;
+    position: relative;
+    background-image: linear-gradient(rgb(13, 13, 32)30%,rgb(71, 71, 71),rgb(13, 13, 32)80%);
+}
+
+
+/*  --------------------------------------------------------- 
+nav bar styles */
+.navbar {
+    position: sticky;
+    top: 0; /* it does not reposition right away,
+               but determines at which point it sticks */
+    display: flex;
+    padding: 0% 0%;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    background-image: linear-gradient(black,rgb(0, 0, 0)80%, rgb(0, 0, 0) 95%, rgba(0, 0, 0, 0.95));
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.95);
+  }
+
+.navbar_link:hover {
+    text-decoration: underline;
+}  
+.navbar_link:active {
+    text-decoration: underline;
+}
+.navbar_link:link, :visited{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 70%;
+}
+.navbar_item{
+    position: relative;
+    flex: 1;
+    margin: 1%;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    text-align: center;
+    overflow:inherit;
+    transition: all 0.5s ease-in-out;
+}  
+.navbar_item:hover{
+    flex-grow: 2;
+    font-size: 90%;
+}
+
+
+
+/* --------------------------------------------------------- 
+footer CSS */
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex ;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    padding-top: 3%;
+    justify-content: center;
+    background-color: rgb(13, 13, 32);
+    height: 5rem;
+}
+.footer_image{
+    display: block;
+    width: auto;
+    height: auto;
+    flex: 1;
+    max-width: 15%;
+    justify-content: center;
+}
+.footer_item{
+    flex: 2;
+    font-size: 150%;
+    margin: 3%;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+.blurb{
+    flex: 2;
+}
+.v-line{
+    flex: 0.01;
+    border-left: white solid 3px;
+    margin: 0% 2%;
+}
+.footer_nav{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.fnav{
+    flex: 1;
+}
+
+
+@media (max-width : 600px) {
+    .navbar {
+        position: sticky;
+        top: 0; /* it does not reposition right away,
+                   but determines at which point it sticks */
+        display: flex;
+        width: vw;
+        padding: 0%;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0;
+        background-image: linear-gradient(black,rgb(0, 0, 0)80%, rgb(0, 0, 0) 95%, rgba(0, 0, 0, 0.95));
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.95);
+    }
+    .navbar_link:link, :visited{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 50%;
+    }
+    .navbar_item{
+        position: relative;
+        flex: 1;
+        margin: 1%;
+        border-bottom: 1px solid rgb(255, 255, 255);
+        text-align: center;
+    } 
+    .footer_item{
+        flex: 2;
+        font-size: 100%;
+        margin: 3%;
+        color: white;
+        justify-content: center;
+        align-items: center;
+    }
+}

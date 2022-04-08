@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="/static/login.css">
+    </head>
+    <body>
+        <div class = "container">
+            <form class = "start secondstart" id = "accountcreation" method = "POST" action = "/signup.html">
+                <h1 class = "name">Create an Account</h1>
+                <div class = "messageerror"></div>
+                <div class = "grouping">
+                    <input type = "text" id = name class = "input" name = "name" autofocus placeholder = "Name" required>
+                    <div class = general></div>
+                </div>
+                <div class = "grouping">
+                    <input type = "text" id = username class = input name = "username" autofocus placeholder = "UTORID" required>
+                    <div class = general></div>
+                </div>
+                <div class = "grouping">
+                    <input type = "password" id = password class = "input" name  = "password" autofocus placeholder = "Password" required>
+                    <div class = general></div>
+                </div>
+                <label for = "usertype">Are you a Student or an Instructor? </label>
+                <br>
+                <input type="radio" name="usertype" value= "S">
+                                <label for="S">Student</label>
+                                <br>
+                <input type="radio" name="usertype" value= "I">
+                                <label for="I">Instructor</label>
+                                <br>
+                <br>
+                <button class = "button" type = "submit" name="signup" value="signup">Create Account</button>
+                <p class = "forgot">
+                    <a href = "./login.html" class = "redirect" id = "linklog">Already have an account? Log in</a>
+                </p>
+            </form>
+
+        </div>
+    </body>
+</html>
